@@ -7,43 +7,46 @@ function Home() {
     setIsPlaying(!isPlaying);
   };
   const code1 = `npm i explorex`;
-  const code2 = `import logo from "./logo.svg";
-  import "./App.css";
-  import { Widget } from "explorex";
+  const code2 = ` import { Widget } from "explorex";
   
   function App() {
+    // Your code
     return (
       <div className="App">
-        <Widget address="TLp9FwsZEc3MaKQVd8Ls1r2KoVKimRH9HA" />
+        <Widget address="Connected wallet address" />
       </div>
+      // Your code
     );
   }
   
   export default App;
   `;
-  const code3 = `import logo from "./logo.svg";
-  import "./App.css";
-  import { Widget, GetHash } from "explorex";
-  import Home from "./components/Home";
+  const code3 = `import { useWallet } from "@tronweb3/tronwallet-adapter-react-hooks";
+  import contractAbi from "./artifacts/Swap.json"; // Your contract abi
+  const contractAddress = "Your contract address";
   
-  function App() {
-    const check = async () => {
+  function Swap() {
+    const { connected, address } = useWallet();
+    const { tronWeb } = window;
+    const swap= async () => {
+      const contract = await tronWeb.contract(contractAbi, contractAddress);
+      let tx = await contract.swap().send({
+        callValue: "100000",
+      });
       GetHash(
-        "5573d02b40b7b1b693987e2694f131e3a2ae64c2809dd1f0f70033da7d9c3e4d",
-        "Mainnet" 
-      );
+          tx,
+          "Enter connected chain" // Mainnet, Shasta, Nile
+        );
     };
-  
     return (
+      // other code
       <div className="App">
-        <Home />
-        <Widget address="TLp9FwsZEc3MaKQVd8Ls1r2KoVKimRH9HA" />
-        <button onClick={() => check()}>Check</button>
+        <button onClick={() => swap()}>Swap tokens</button>
       </div>
     );
   }
   
-  export default App;
+  export default Swap;
   `;
   return (
     <div className="main-bg">
@@ -55,9 +58,9 @@ function Home() {
           />
         </div>
       </nav>
-      <div style={{ margin: "50px 0px" }}>
+      <div style={{ marginTop: "50px" }}>
         <section className="s1">
-          <div className=" css-typing">
+          <div className="css-typing">
             <div className="title-heading">
               ExploreX seamlessly embeds vital explorer functions
             </div>
@@ -74,19 +77,19 @@ function Home() {
               loop
               muted
               className="p-middle-video"
-              style={{ width: "60%", borderRadius: "20px" }}
+              style={{ width: "60%", borderRadius: "5px" }}
             >
-              <source src="dummy.mp4" type="video/mp4" />
+              <source src="https://bafybeibfyyzr7lghgccdounpbqk3hgp2e776t2dima4avxtoqluo6f4yvm.ipfs.w3s.link/Untitled%20design.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
         </section>
         <section className="s3">
-          <h1 style={{ padding: "20px", fontSize: "3rem" }}>
-            Steps for installing the package
+          <h1 style={{ padding: "20px", fontSize: "2.3rem" }}>
+          Steps for using the Explorex widget 
           </h1>
           <div>
-            <h5 className="title1">Step1: Install the package</h5>
+            <h5 className="title1">Step1: Install the package.</h5>
             <div style={{ width: "100%" }}>
               <div className="code1-main">
                 <code>
@@ -96,7 +99,7 @@ function Home() {
             </div>
           </div>
           <div>
-            <h5 className="title1">Step2: Import the Widget in App.js file</h5>
+            <h5 className="title1">Step2: Import the Widget in App.js file.</h5>
             <div style={{ width: "100%" }}>
               <div className="code1-main">
                 <code className="code-sub-div">
@@ -106,7 +109,7 @@ function Home() {
             </div>
           </div>
           <div>
-            <h5 className="title1">Step4: after every transaction receipt </h5>
+            <h5 className="title1">Step3: Call GetHash() function for every transaction you sent on the blockchain. </h5>
             <div style={{ width: "100%" }}>
               <div className="code1-main">
                 <code>
@@ -116,6 +119,24 @@ function Home() {
             </div>
           </div>
         </section>
+        <div
+          style={{
+            padding: "5px 0px",
+            boxShadow:" 0 2px 20px #000000c7",
+            fontSize: "15px",
+            color: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: "5px",
+          }}
+        >
+          Powered by{" "}
+          <img
+            src="https://bafybeidewda6po5lmp2moos3vldlysavrtas6yjicav76fhkrhpxr7hk6e.ipfs.w3s.link/exploreX.png"
+            style={{ width: "100px" }}
+          />
+        </div>
       </div>
     </div>
   );
