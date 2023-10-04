@@ -21,9 +21,11 @@ function Home() {
   
   export default App;
   `;
-  const code3 = `import { useWallet } from "@tronweb3/tronwallet-adapter-react-hooks";
-  import contractAbi from "./artifacts/Swap.json"; // Your contract abi
-  const contractAddress = "Your contract address";
+  const code3 = 
+  `import { useWallet } from "@tronweb3/tronwallet-adapter-react-hooks";
+import contractAbi from "./artifacts/Swap.json"; // Your contract abi
+
+const contractAddress = "Your contract address";
   
   function Swap() {
     const { connected, address } = useWallet();
@@ -57,6 +59,10 @@ function Home() {
             style={{ width: "50%" }}
           />
         </div>
+        <div>
+          <span style={{padding:"20px"}}>Package link : <a href="https://www.npmjs.com/package/explorex" target="_blank" >www.npmjs.com/package/explorex</a>
+</span>       
+ </div>
       </nav>
       <div style={{ marginTop: "50px" }}>
         <section className="s1">

@@ -1,6 +1,11 @@
 nav {
   display: flex;
   box-shadow: 0 2px 20px #000000c7;
+  justify-content: space-between;
+  align-items: center;
+}
+a{
+  color: rgba(255, 0, 0, 0.507);
 }
 
 .nav-main {
