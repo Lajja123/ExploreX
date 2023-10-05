@@ -21,8 +21,7 @@ function Home() {
   
   export default App;
   `;
-  const code3 = 
-  `import { useWallet } from "@tronweb3/tronwallet-adapter-react-hooks";
+  const code3 = `import { useWallet } from "@tronweb3/tronwallet-adapter-react-hooks";
 import contractAbi from "./artifacts/Swap.json"; // Your contract abi
 
 const contractAddress = "Your contract address";
@@ -60,9 +59,15 @@ const contractAddress = "Your contract address";
           />
         </div>
         <div>
-          <span style={{padding:"20px"}}>Package link : <a href="https://www.npmjs.com/package/explorex" target="_blank" >www.npmjs.com/package/explorex</a>
-</span>       
- </div>
+          <span
+            style={{ padding: "20px", fontSize: "15px", letterSpacing: "1px" }}
+          >
+            Package link :{" "}
+            <a href="https://www.npmjs.com/package/explorex" target="_blank">
+              www.npmjs.com/package/explorex
+            </a>
+          </span>
+        </div>
       </nav>
       <div style={{ marginTop: "50px" }}>
         <section className="s1">
@@ -85,14 +90,17 @@ const contractAddress = "Your contract address";
               className="p-middle-video"
               style={{ width: "60%", borderRadius: "5px" }}
             >
-              <source src="https://bafybeibfyyzr7lghgccdounpbqk3hgp2e776t2dima4avxtoqluo6f4yvm.ipfs.w3s.link/Untitled%20design.mp4" type="video/mp4" />
+              <source
+                src="https://bafybeibfyyzr7lghgccdounpbqk3hgp2e776t2dima4avxtoqluo6f4yvm.ipfs.w3s.link/Untitled%20design.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
         </section>
         <section className="s3">
           <h1 style={{ padding: "20px", fontSize: "2.3rem" }}>
-          Steps for using the Explorex widget 
+            Steps for using the Explorex widget
           </h1>
           <div>
             <h5 className="title1">Step1: Install the package.</h5>
@@ -115,7 +123,10 @@ const contractAddress = "Your contract address";
             </div>
           </div>
           <div>
-            <h5 className="title1">Step3: Call GetHash() function for every transaction you sent on the blockchain. </h5>
+            <h5 className="title1">
+              Step3: Call GetHash() function for every transaction you sent on
+              the blockchain.{" "}
+            </h5>
             <div style={{ width: "100%" }}>
               <div className="code1-main">
                 <code>
@@ -128,7 +139,7 @@ const contractAddress = "Your contract address";
         <div
           style={{
             padding: "5px 0px",
-            boxShadow:" 0 2px 20px #000000c7",
+            boxShadow: "0 2px 20px #465b63c7",
             fontSize: "15px",
             color: "white",
             display: "flex",
