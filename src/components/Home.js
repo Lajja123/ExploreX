@@ -56,11 +56,13 @@ const contractAddress = "Your contract address";
           <img
             src="https://bafybeidewda6po5lmp2moos3vldlysavrtas6yjicav76fhkrhpxr7hk6e.ipfs.w3s.link/exploreX.png"
             style={{ width: "50%" }}
+            className="m-logo"
           />
         </div>
         <div>
           <span
             style={{ padding: "20px", fontSize: "15px", letterSpacing: "1px" }}
+            className="m-pkglink"
           >
             Package link :{" "}
             <a href="https://www.npmjs.com/package/explorex" target="_blank">
@@ -69,7 +71,7 @@ const contractAddress = "Your contract address";
           </span>
         </div>
       </nav>
-      <div style={{ marginTop: "50px" }}>
+      <div style={{ marginTop: "50px" }} className="m-home-main">
         <section className="s1">
           <div className="css-typing">
             <div className="title-heading">
@@ -89,6 +91,7 @@ const contractAddress = "Your contract address";
               muted
               className="p-middle-video"
               style={{ width: "60%", borderRadius: "5px" }}
+              poster="home.png"
             >
               <source
                 src="https://bafybeibfyyzr7lghgccdounpbqk3hgp2e776t2dima4avxtoqluo6f4yvm.ipfs.w3s.link/Untitled%20design.mp4"
@@ -99,12 +102,15 @@ const contractAddress = "Your contract address";
           </div>
         </section>
         <section className="s3">
-          <h1 style={{ padding: "20px", fontSize: "2.3rem" }}>
+          <h1
+            style={{ padding: "20px", fontSize: "2.3rem" }}
+            className="step-heading"
+          >
             Steps for using the Explorex widget
           </h1>
           <div>
             <h5 className="title1">Step1: Install the package.</h5>
-            <div style={{ width: "100%" }}>
+            <div style={{ width: "100%", margin: "20px 0px" }}>
               <div className="code1-main">
                 <code>
                   <pre>{code1}</pre>
@@ -114,7 +120,7 @@ const contractAddress = "Your contract address";
           </div>
           <div>
             <h5 className="title1">Step2: Import the Widget in App.js file.</h5>
-            <div style={{ width: "100%" }}>
+            <div style={{ width: "100%", margin: "20px 0px" }}>
               <div className="code1-main">
                 <code className="code-sub-div">
                   <pre>{code2}</pre>
@@ -127,7 +133,7 @@ const contractAddress = "Your contract address";
               Step3: Call GetHash() function for every transaction you sent on
               the blockchain.{" "}
             </h5>
-            <div style={{ width: "100%" }}>
+            <div style={{ width: "100%", margin: "20px 0px" }}>
               <div className="code1-main">
                 <code>
                   <pre>{code3}</pre>
@@ -138,7 +144,7 @@ const contractAddress = "Your contract address";
         </section>
         <div
           style={{
-            padding: "5px 0px",
+            padding: "15px 0px",
             boxShadow: "0 2px 20px #465b63c7",
             fontSize: "15px",
             color: "white",
@@ -147,11 +153,13 @@ const contractAddress = "Your contract address";
             justifyContent: "center",
             borderRadius: "5px",
           }}
+          className="m-footer-main"
         >
           Powered by{" "}
           <img
             src="https://bafybeidewda6po5lmp2moos3vldlysavrtas6yjicav76fhkrhpxr7hk6e.ipfs.w3s.link/exploreX.png"
             style={{ width: "100px" }}
+            className="footer-logo"
           />
         </div>
       </div>
