@@ -80,9 +80,8 @@ a {
     align-items: center;
     padding: 20px;
   }
-
   a {
-    color: rgba(255, 0, 0, 0.507);
+    color: blue;
   }
 
   .nav-main {
@@ -153,6 +152,7 @@ a {
     font-size: 1.3rem !important;
   }
 }
+
 @media only screen and (max-width: 425px) {
   nav {
     display: flex;
@@ -163,7 +163,7 @@ a {
   }
 
   a {
-    color: rgba(255, 0, 0, 0.507);
+    color: blue;
   }
   .m-logo {
     width: 100% !important;
@@ -178,19 +178,6 @@ a {
     text-align: center;
     font-weight: 700;
     letter-spacing: 1px;
-    /* background: linear-gradient(
-      60deg,
-      #ffb46a,
-      #ff9984,
-      #ff84a7,
-      #f09eff,
-      #97baff,
-      #7bedff,
-      #93fff1,
-      #a1ffb8
-    );
-    -webkit-background-clip: text;
-    color: transparent; */
   }
   .s1 {
     padding: 20px 0px;
@@ -254,5 +241,97 @@ a {
   }
   .m-footer-main {
     padding: 5px 0px !important;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  nav {
+    display: flex;
+    box-shadow: 0 2px 20px #465b63c7;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  a {
+    color: blue;
+  }
+  .m-logo {
+    width: 100% !important;
+  }
+  .nav-main {
+    width: 25%;
+  }
+
+  .title-heading {
+    font-size: 0.6rem;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .s1 {
+    padding: 10px 0px;
+  }
+  .s2 {
+    padding: 20px 0px;
+  }
+  .s3 {
+    padding: 10px 0px;
+  }
+  .code1-main {
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 50px 0;
+    padding: 10px;
+    text-align: justify;
+    width: 40%;
+    margin: 0 auto;
+    max-width: 50%;
+    min-width: 70%;
+    max-height: 500px;
+    border-radius: 10px;
+    background-color: #000;
+    font-size: 15px;
+  }
+  pre {
+    font-size: 5.3px;
+  }
+  .title1 {
+    width: 70%;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    text-align: left;
+  }
+  .step-heading {
+    padding: 10px !important;
+    margin: 0;
+    font-size: 0.8rem !important;
+    letter-spacing: 1px;
+  }
+
+  .m-pkglink {
+    padding: 10px !important;
+    font-size: 8px !important;
+    letter-spacing: 0px !important;
+  }
+  .m-home-main {
+    margin-top: 30px !important;
+  }
+  video {
+    width: 75% !important;
+  }
+  .footer-logo {
+    width: 75px !important;
+  }
+  .m-footer-main {
+    padding: 5px 0px !important;
+    font-size: 12px !important;
   }
 }
