@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { useWallet } from "@tronweb3/tronwallet-adapter-react-hooks";
+// import abi from "../artifacts/DonateFunds.json";
 import "../components/home.css";
+const contractAddress = "TCg2meXEvMYubdBVnNmkqMZAS4gyDNJStJ";
 
 function Home() {
+  const { connected, address } = useWallet();
+  const { tronWeb } = window;
   const [isPlaying, setIsPlaying] = useState(false);
   const toggleVideo = () => {
     setIsPlaying(!isPlaying);
@@ -49,6 +54,180 @@ const contractAddress = "Your contract address";
   
   export default Swap;
   `;
+
+  const donate = async () => {
+    const abi = [
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "_value",
+            type: "uint256",
+          },
+        ],
+        stateMutability: "nonpayable",
+        type: "constructor",
+      },
+      {
+        anonymous: false,
+        inputs: [
+          {
+            indexed: true,
+            internalType: "address",
+            name: "user",
+            type: "address",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "amount",
+            type: "uint256",
+          },
+        ],
+        name: "Donated",
+        type: "event",
+      },
+      {
+        anonymous: false,
+        inputs: [
+          {
+            indexed: true,
+            internalType: "address",
+            name: "user",
+            type: "address",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "amount",
+            type: "uint256",
+          },
+        ],
+        name: "DonationWithdraw",
+        type: "event",
+      },
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "_value",
+            type: "uint256",
+          },
+        ],
+        name: "changeMinimumDonation",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "newOwner",
+            type: "address",
+          },
+        ],
+        name: "changeOwner",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "donateFunds",
+        outputs: [],
+        stateMutability: "payable",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address",
+          },
+        ],
+        name: "donatedFund",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "getContractBalance",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "minimumDonation",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "owner",
+        outputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "_address",
+            type: "address",
+          },
+          {
+            internalType: "uint256",
+            name: "_value",
+            type: "uint256",
+          },
+        ],
+        name: "withdrawDonation",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        stateMutability: "payable",
+        type: "receive",
+      },
+    ];
+
+    const contract = await tronWeb.contract(abi, contractAddress);
+    let tx = await contract.donateFunds().send({
+      callValue: "100000",
+    });
+    console.log(tx);
+  };
+
   return (
     <div className="main-bg">
       <nav>
@@ -82,14 +261,18 @@ const contractAddress = "Your contract address";
               directly into the user's DApp or browser
             </div>
           </div>
-          <div style={{margin:"20px auto", width:"50%"}}className="donate-btt-main">
+          <div
+            style={{ margin: "20px auto", width: "50%" }}
+            className="donate-btt-main"
+          >
             <button
               className="search-button donate-btn"
               title="currently we are accepting donation on shashta network only"
+              onClick={() => donate()}
             >
               Donate
-            </button></div>
-          
+            </button>
+          </div>
         </section>
         <section className="s2">
           <div style={{ width: "90%", margin: "0 auto" }}>
