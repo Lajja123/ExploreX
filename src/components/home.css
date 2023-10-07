@@ -72,6 +72,68 @@ a {
   letter-spacing: 1px;
 }
 
+/* Button Styles */
+.search-button {
+  /* background-color: initial; */
+  background: transparent;
+  border-radius: 5px;
+  color: #18141d;
+  /* flex: 0 0 100px; */
+  letter-spacing: 0.5px;
+  width: 70%;
+  padding: 10px 5px;
+  height: 60%;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  z-index: 1;
+  position: relative; /* You may need this line */
+}
+
+/* Button Background Animation */
+.search-button::before {
+  content: "";
+  animation: animatedgradient 3s ease infinite alternate;
+  left: -4px;
+  position: absolute;
+  top: -4px;
+  width: calc(100% + 8px);
+  background: linear-gradient(
+    60deg,
+    #ffb46a,
+    #ff9984,
+    #ff84a7,
+    #f09eff,
+    #97baff,
+    #7bedff,
+    #93fff1,
+    #a1ffb8
+  );
+  background-size: 300% 300%;
+  border-radius: 12px;
+  content: "";
+  z-index: -1;
+  height: calc(100% + 8px);
+}
+
+/* Keyframes for Animation */
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+.donate-btn {
+  width: 30%;
+}
+.donate-btn-main{
+  margin: 20px auto;
+  width: 50%;
+}
+
 @media only screen and (max-width: 768px) {
   nav {
     display: flex;
@@ -242,6 +304,10 @@ a {
   .m-footer-main {
     padding: 5px 0px !important;
   }
+  .donate-btn-main{
+    margin: 20px auto;
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 375px) {
@@ -261,6 +327,10 @@ a {
   }
   .nav-main {
     width: 25%;
+  }
+  .donate-btn-main{
+    margin: 20px auto;
+    width: 100%;
   }
 
   .title-heading {

@@ -82,6 +82,14 @@ const contractAddress = "Your contract address";
               directly into the user's DApp or browser
             </div>
           </div>
+          <div style={{margin:"20px auto", width:"50%"}}className="donate-btt-main">
+            <button
+              className="search-button donate-btn"
+              title="currently we are accepting donation on shashta network only"
+            >
+              Donate
+            </button></div>
+          
         </section>
         <section className="s2">
           <div style={{ width: "90%", margin: "0 auto" }}>
