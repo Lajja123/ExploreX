@@ -11,14 +11,19 @@ function Home() {
   const toggleVideo = () => {
     setIsPlaying(!isPlaying);
   };
-  const code1 = `npm i explorex`;
+  const code1 = `npm i explorex
+
+#OR
+  
+yarn add explorex`;
+
   const code2 = ` import { Widget } from "explorex";
   
   function App() {
     // Your code
     return (
       <div className="App">
-        <Widget address="Connected wallet address" />
+      <Widget address="Connected wallet address" chain="Mainnet or Shasta or Nile" />
       </div>
       // Your code
     );
@@ -34,16 +39,19 @@ const contractAddress = "Your contract address";
   function Swap() {
     const { connected, address } = useWallet();
     const { tronWeb } = window;
+
     const swap= async () => {
       const contract = await tronWeb.contract(contractAbi, contractAddress);
       let tx = await contract.swap().send({
         callValue: "100000",
       });
+
       GetHash(
           tx,
           "Enter connected chain" // Mainnet, Shasta, Nile
         );
     };
+
     return (
       // other code
       <div className="App">
@@ -331,6 +339,11 @@ const contractAddress = "Your contract address";
                 </code>
               </div>
             </div>
+            <h4 className="title1">
+              Make sure to replace placeholders like "Connected wallet address",
+              "Mainnet or Shasta or Nile", and others with actual values
+              relevant to your project.
+            </h4>
           </div>
         </section>
         <div

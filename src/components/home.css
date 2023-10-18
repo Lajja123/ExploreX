@@ -58,7 +58,7 @@ a {
   margin: 0 auto;
   max-width: 50%;
   min-width: 60%;
-  max-height: 500px;
+  max-height: 550px;
   border-radius: 10px;
   background-color: #000;
   font-size: 15px;
@@ -129,7 +129,7 @@ a {
 .donate-btn {
   width: 30%;
 }
-.donate-btn-main{
+.donate-btn-main {
   margin: 20px auto;
   width: 50%;
 }
@@ -304,7 +304,7 @@ a {
   .m-footer-main {
     padding: 5px 0px !important;
   }
-  .donate-btn-main{
+  .donate-btn-main {
     margin: 20px auto;
     width: 100%;
   }
@@ -328,7 +328,7 @@ a {
   .nav-main {
     width: 25%;
   }
-  .donate-btn-main{
+  .donate-btn-main {
     margin: 20px auto;
     width: 100%;
   }
